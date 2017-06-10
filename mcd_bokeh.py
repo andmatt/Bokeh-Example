@@ -16,7 +16,7 @@ def update_plot(attrname, old, new):
     df3 = subset(test, category)
     source.data.update(df3.data)
 
-mcd = pd.read_csv('C:/Users/Matt/Documents/GitHub/bokeh scratchpad/menu.csv')
+mcd = pd.read_csv('C:/Users/Matt/Documents/GitHub/Bokeh-Example/menu.csv')
 select = Select(title="Category:", value="Breakfast", options=mcd['Category'].unique().tolist())
 
 df = mcd[['Category', 'Item', 'Total Fat', 'Carbohydrates', 'Protein', 'Sugars', 'Cholesterol']]
@@ -50,4 +50,4 @@ select.on_change('value', update_plot)
 controls = column(select)
 curdoc().add_root(row(p, controls))
 
-# bokeh serve --show "c:/Users/Matt/Documents/GitHub/bokeh scratchpad/mcd.py"
+# bokeh serve --show "c:/Users/Matt/Documents/GitHub/Bokeh-Example/mcd_bokeh.py"
